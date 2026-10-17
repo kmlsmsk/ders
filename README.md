@@ -39,7 +39,7 @@
 
 ### 4. 📋 Sınıf Defteri Doldurma Modülü
 - E-okul ve sınıf defterine yazılacak haftalık kazanım metnini tek tıkla panoya kopyalama.
-- `defterdoldur.com` ve MEB standartlarına tam uyumlu format.
+- MEB standartlarına tam uyumlu format.
 
 ### 5. 📱 Android Ana Ekran Widget'ı (Home Widget)
 - Telefonun ana ekranına eklenen şık widget sayesinde uygulamayı açmadan bu haftanın dersini, sınıfını ve kazanım kodunu takip edebilme.
