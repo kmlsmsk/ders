@@ -31,22 +31,32 @@
 - **Hızlı Özet Izgarası (Grid):** Tek tıkla tüm sınıflarınızın o haftaki kazanımlarını yan yana ızgara olarak görebilirsiniz.
 - Tek dokunuşla sınıflar arasında anında geçiş yapma.
 
-### 3. 🗓️ Entegre Haftalık Ders Programı (Timetable)
+### 3. ⏱️ Öğretmen Sınıf Akışı & Canlı Ders Takibi (Classroom Flow)
+- **Önce Programa Bak, Sonra Sınıfa Git:** Öğretmen günün programına tek bakışta bakar; zil çaldığında sınıfa girerken ekranda anında **Şu Anki Ders** ve **Sıradaki Ders** kartı hazırdır.
+- **Ders & Konum Bilgisi:** Sınıf şubesi (örn: `7-B`), derslik numarası, ders saati ve süresi canlı gösterilir.
+- **Günün Öğrenme Çıktısı:** Sınıfta o gün ve hafta işlenecek konunun kazanım kodu, başlığı ve pedagojik açıklaması tek bakışta önünüze gelir.
+- **1 Tıkla Deftere Kopyala:** Ders defterini ve e-Okul'u doldurmak için hazır şablonu tek dokunuşla panoya kopyalar.
+- **Kazanımı İncele:** Derste işlenecek süreç bileşenleri, öğrenme adımları ve örnek soru/çözüm modalını anında açar.
+
+### 4. 🗓️ Entegre Haftalık Ders Programı (Timetable)
 - Pazartesi - Cuma, 1. dersten 7. derse kadar okul zaman çizelgesi.
 - **Günlük ve Haftalık Matris Görünümü:** İster günün derslerini ister haftanın tamamını matris ızgarasında inceleyin.
 - **Kazanımlara Doğrudan Erişim:** Ders programındaki herhangi bir derse tıklandığında, doğrudan o dersin **o haftaki güncel öğrenme çıktısına** ve müfredat detayına yönlendirir.
 - Hızlı ders ekleme, saat güncelleme, derslik belirleme ve renk özelleştirme.
 
-### 4. 📋 Sınıf Defteri Doldurma Modülü
+### 5. 📋 Sınıf Defteri Doldurma Modülü
 - E-okul ve sınıf defterine yazılacak haftalık kazanım metnini tek tıkla panoya kopyalama.
 - MEB standartlarına tam uyumlu format.
 
-### 5. 📱 Android Ana Ekran Widget'ı (Home Widget)
+### 6. 📱 Android Ana Ekran Widget'ı (Home Widget)
+- Yenilenen yüksek kontrastlı, sade ve modüler widget tasarımı.
 - Telefonun ana ekranına eklenen şık widget sayesinde uygulamayı açmadan bu haftanın dersini, sınıfını ve kazanım kodunu takip edebilme.
+- Uygulama içi canlı önizleme ve 1 tıkla ana ekrana sabitleme (pin to home).
 
-### 6. 🎨 Modern ve Erişilebilir Arayüz
+### 7. 🎨 Sade, Modüler ve Kullanıcı Dostu Arayüz (UX/UI)
+- Öğretmenlerin ihtiyaçlarına göre sadeleştirilmiş, gözü yormayan modern tasarım.
 - Tam Koyu (Dark) ve Açık (Light) Tema desteği.
-- Akıcı animasyonlar, dokunsal geri bildirim (Haptic Feedback) ve sezgisel tasarım.
+- Akıcı animasyonlar, dokunsal geri bildirim (Haptic Feedback) ve sezgisel gezinme çubuğu.
 
 ---
 
@@ -82,9 +92,10 @@ lib/
 │   ├── timetable_service.dart          # Ders programı kalıcılığı ve yönetimi
 │   └── widget_sync_service.dart        # Android Home Widget köprüsü
 └── widgets/
+    ├── today_live_schedule_card.dart   # Canlı ders & sınıf akış kartı (Şu anki / sıradaki ders)
     ├── lesson_edit_dialog.dart         # Ders ekleme / düzenleme iletişim penceresi
     ├── outcome_detail_sheet.dart       # Kazanım detay modalı
-    └── widget_preview_card.dart        # Widget önizleme bileşeni
+    └── widget_preview_card.dart        # Android canlı widget önizleme bileşeni
 ```
 
 ---

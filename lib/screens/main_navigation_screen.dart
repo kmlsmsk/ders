@@ -60,6 +60,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         isDarkMode: widget.isDarkMode,
         onOpenSubjectsGrid: () => _onTabSelected(2),
         onOpenSettings: () => _onTabSelected(3),
+        onOpenTimetable: () => _onTabSelected(1),
       ),
       TimetableScreen(
         onNavigateToCurriculum: _onNavigateToCurriculumFromTimetable,

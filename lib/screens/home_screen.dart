@@ -7,6 +7,7 @@ import '../models/teacher_assignment.dart';
 import '../services/settings_service.dart';
 import '../services/widget_sync_service.dart';
 import '../widgets/outcome_detail_sheet.dart';
+import '../widgets/today_live_schedule_card.dart';
 import '../widgets/widget_preview_card.dart';
 
 enum HomeViewMode {
@@ -20,6 +21,7 @@ class HomeScreen extends StatefulWidget {
   final bool isDarkMode;
   final VoidCallback onOpenSubjectsGrid;
   final VoidCallback onOpenSettings;
+  final VoidCallback onOpenTimetable;
 
   const HomeScreen({
     super.key,
@@ -27,6 +29,7 @@ class HomeScreen extends StatefulWidget {
     required this.isDarkMode,
     required this.onOpenSubjectsGrid,
     required this.onOpenSettings,
+    required this.onOpenTimetable,
   });
 
   @override
@@ -351,6 +354,28 @@ class HomeScreenState extends State<HomeScreen> {
                   children: [
                     // Teacher Personalization Greeting Card
                     _buildTeacherGreetingBar(settings, primaryColor, isDark),
+                    const SizedBox(height: 12),
+
+                    // Today's Live Schedule Card (Teacher Classroom Workflow)
+                    TodayLiveScheduleCard(
+                      onOpenTimetable: widget.onOpenTimetable,
+                      onSelectLessonOutcome: (subjectId, grade, targetWeek) {
+                        selectSubjectAndGrade(subjectId, grade, targetWeek);
+                      },
+                      onShowOutcomeDetail: (week, outcome, gradeTitle) {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          builder: (context) => OutcomeDetailSheet(
+                            gradeTitle: gradeTitle,
+                            week: week,
+                            outcome: outcome,
+                          ),
+                        );
+                      },
+                      isDarkMode: isDark,
+                    ),
                     const SizedBox(height: 12),
 
                     // Teacher Assigned Classes & Carousel / Grid Dashboard
